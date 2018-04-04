@@ -179,6 +179,22 @@ var showReminderInput = function () {
   }
     // Fammi qaulche domanda sul nostro partito, sul nostro programma ed elettori.
   </script>
-
+  <!-- WhatsHelp.io widget -->
+  <script type="text/javascript">
+      (function () {
+          var options = {
+              facebook: "196863951037791", // Facebook page ID
+              company_logo_url: "//storage.whatshelp.io/widget/fb/fb15/fb157e5df48982fc1782e2cf6169e489/29598389_196864121037774_6059877720219647987_n.jpg", // URL of company logo (png, jpg, gif)
+              greeting_message: "Vuoi suggerirci nuove domande e nuove risposte? Scrivici", // Text of greeting message
+              call_to_action: "Scrivi alla pagina", // Call to action
+              position: "right", // Position may be 'right' or 'left'
+          };
+          var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
+          var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+          s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+          var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+      })();
+  </script>
+  <!-- /WhatsHelp.io widget -->
 </body>
 </html>
