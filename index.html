@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5 StelleBot - il simulatore del pentastellato ideale</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="build/botui.min.css">
+  <link rel="stylesheet" href="build/botui-theme-default.css">
+</head>
+<body>
+  <div class="botui-app-container" id="stellebot">
+    <bot-ui></bot-ui>
+  </div>
+  <script src="https://cdn.jsdelivr.net/vue/2.0.5/vue.min.js"></script>
+  <script src="build/botui.js"></script>
+  <script>
+    var botui = new BotUI('stellebot');
+
+    botui.message.bot({ // show first message
+      delay: 200,
+      content: 'Ciao, io sono 5Stelle Bot'
+    }).then(function () {
+      return botui.message.bot({ // second one
+        delay: 1000, // wait 1 sec.
+        content: 'Come stai?'
+      });
+    }).then(function () {
+      return botui.action.button({ // let user do something
+        delay: 1000,
+        action: [
+          {
+            text: 'Bene',
+            value: 'Fantastico andremo molto d\'accordo.'
+          },
+          {
+            text: 'Male',
+            value: 'Mi spiace, per fortuna ci sono i 5 stelle e ti tireremo su.'
+          }
+        ]
+      });
+    }).then(function (res) {
+      return botui.message.bot({
+        delay: 1000,
+        content:  res.value
+      });
+    }).then(function () {
+      return botui.message.bot({ // second one
+        delay: 1000, // wait 1 sec.
+        content: 'Vuoi qualche domanda sul nostro partito, sul nostro programma ed elettori.'})
+  .then(function () {
+    return botui.action.button({
+      delay: 1000,
+      action: [{
+        text: 'Si!!!',
+        value: 'yes'
+      }, {
+        text: 'No',
+        value: 'no'
+      }]
+    })
+}).then(function (res) {
+  if(res.value == 'yes') {
+    showReminderInput();
+  } else {
+    botui.message.bot('Ok, probabilmente sei un piddino amico di renzie e la verità non ti interessa');
+  }
+});
+});
+
+var showReminderInput = function () {
+  botui.message
+    .bot({
+      delay: 500,
+      content: 'Scrivi la tua domanda qui sotto:'
+    })
+    .then(function () {
+      return botui.action.text({
+        delay: 1000,
+        action: {
+          placeholder: 'es. Perchè Di Maio ha preso i mezzi oggi?'
+        }
+      })
+    }).then(function (res) {
+      botui.message
+        .bot({
+          delay: 500,
+          content: 'Perchè Renzie #chehafatto?'
+        });
+
+      return botui.action.button({
+        delay: 1000,
+        action: [{
+          icon: 'plus',
+          text: 'Altra domanda?',
+          value: 'yes'
+        }]
+      })
+    }).then(showReminderInput);
+  }
+    // Fammi qaulche domanda sul nostro partito, sul nostro programma ed elettori.
+  </script>
+
+</body>
+</html>

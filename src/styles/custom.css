@@ -1,0 +1,46 @@
+.botui-container {
+
+}
+
+.botui-messages-container {
+}
+
+.botui-actions-container {
+}
+
+.botui-message {
+
+}
+
+.botui-message-content {
+
+  &.human {
+
+  }
+
+  &.text {
+  }
+
+  &.embed {
+
+  }
+}
+
+.botui-message-content-link {
+}
+
+.botui-actions-text-input {
+
+}
+
+.botui-actions-text-submit {
+
+}
+
+input.botui-actions-text-input {
+ width: 100%;
+}
+
+.botui-actions-buttons-button {
+
+}
