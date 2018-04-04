@@ -188,16 +188,17 @@
   if(res.value == 'yes') {
     showReminderInput();
   } else {
-    botui.message.bot('Ok, probabilmente sei un piddino amico di renzie e la verità non ti interessa');
+    botui.message.bot('Ok, probabilmente sei un piddino amico di renzie e la verità non ti interessa')
+    .then(function(){
+      return botui.message.bot({
+        delay: 1500,
+        content:  "Ora che te ne ho cantate quattro non puoi non farmi altre domande. Ce' la libertà di parola in Italia o sbaglio? Quindi fammi una domanda!"
+      }).then(function(){
+        showReminderInput();
+      });
+    });
   }
-}).then(function(){
-  return botui.message.bot({
-    delay: 1500,
-    content:  "Ora che te ne ho cantate quattro non puoi non farmi altre domande. Ce' la libertà di parola in Italia o sbaglio? Quindi fammi una domanda!"
-  }).then(function(){
-    showReminderInput();
-  });
-});
+})
 });
 
 var showReminderInput = function () {
