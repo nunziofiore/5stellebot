@@ -188,7 +188,7 @@ var showReminderInput = function () {
       botui.message
         .bot({
           delay: 500,
-          content: 'Perchè Renzie #chehafatto?'
+          content: getAnswer()
         });
 
       return botui.action.button({
@@ -200,6 +200,20 @@ var showReminderInput = function () {
         }]
       })
     }).then(showReminderInput);
+  }
+
+  function getAnswer(){
+    items = ["Perchè Renzie #chehafatto?",
+    "gli altri che han fatto?",
+"allora continua a farti derubbare dai vecchi politici",
+"li abbiamo mandati a casa",
+"non lo so ma Fico oggi andrà a lavoro con il teletrasporto",
+"la Raggi non poteva fare niente perchè i poteri forti la bloccano",
+"continuate a chiedervi cose solo su di noi bravi",
+"io nel dubbio non mi vaccino",
+"vergonia!!!1!"]
+
+    return items[Math.floor(Math.random()*items.length)];
   }
     // Fammi qaulche domanda sul nostro partito, sul nostro programma ed elettori.
   </script>
