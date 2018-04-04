@@ -8,6 +8,18 @@
   <link rel="stylesheet" href="build/botui-theme-default.css">
   <link rel="stylesheet" href="build/custom.css">
 
+  <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/css/animsition.min.css" integrity="sha256-FAIOZJGGkyuIp/gVrVL/k52z4rpCKMrRlYMdGCWstUo=" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js" integrity="sha256-8y2mv4ETTGZLMlggdrgmCzthTVCNXGUdCQe1gd8qkyM=" crossorigin="anonymous"></script>
+
+
 <meta name="description" content="5 StelleBot - noi che guardiamo sempre al futuro abbiamo finalmente il nostro bot per poter parlare con i nostri elettori e con gli italiani in generale! ">
 
 <meta name="author" content="">
@@ -15,11 +27,25 @@
 <meta property="og:site_name" content="5 StelleBot - noi che guardiamo sempre al futuro! abbiamo finalmente il nostro bot per poter parlare con i nostri elettori e con gli italiani in generale!">
 <meta property="og:url" content="http://5stellebot.com">
 <meta property="og:image" content="http://5stellebot.com/img/share.png">
-
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-1978599125425587",
+          enable_page_level_ads: true
+     });
+</script>
 </head>
 <body>
-  <div class="botui-app-container" id="stellebot">
-    <bot-ui></bot-ui>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-1 col-md-4"><img src="img/share.png" class="img-fluid"></div>
+      <div class="col-xs-1 col-md-4">
+        <div class="botui-app-container" id="stellebot">
+          <bot-ui></bot-ui>
+        </div>
+      </div>
+      <div class="col-xs-1 col-md-4"><img src="img/share.png" class="img-fluid"></div>
+    </div>
   </div>
   <script src="https://cdn.jsdelivr.net/vue/2.0.5/vue.min.js"></script>
   <script src="build/botui.js"></script>
