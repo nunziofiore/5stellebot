@@ -206,33 +206,17 @@
 });
 
 var showReminderInput = function () {
-  botui.message
-    .bot({
-      delay: 500,
-      content: 'Scrivi la tua domanda qui sotto:'
-    })
-    .then(function () {
-      return botui.action.text({
+  botui.action.text({
         delay: 1000,
         action: {
-          placeholder: 'es. Perchè Di Maio ha preso i mezzi oggi?'
+          placeholder: 'scrivi la tua domanda qui'
         }
-      })
-    }).then(function (res) {
+      }).then(function (res) {
       botui.message
         .bot({
           delay: 500,
           content: getAnswer()
         });
-
-      return botui.action.button({
-        delay: 1000,
-        action: [{
-          icon: 'plus',
-          text: 'Altra domanda?',
-          value: 'yes'
-        }]
-      })
     }).then(showReminderInput);
   }
 
